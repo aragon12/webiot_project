@@ -1,15 +1,47 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            body{
+                background-color: #03A9F4;
+                color: white;
+                padding-top: 20px;
+            }
+            .form_cont {
+                text-align: center;
+                font-size: 45px;
+                padding: 15px;
+                margin: 100px 400px;
+            box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+            }
+            .btn{
+            background-color: inherit;
+            font-size: 30px;
+            padding:10px;
+            margin-top: 30px;
+            border:none;
+            color: white;
+            box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+            }
+            .tbox {
+                font-size: 25px;
+            }
+            .header {
+                text-align: center;
+                font-size: 50px;
+            }
+            </style>
         <title>Quiz Home</title>
     </head>
     <body>
-        <H1 align="center"> Welcome</H1>
+        <div class="header"> Welcome</div>
+        <div class="form_cont">
             <form method="Post" action="/login">
-                Email:<input type="text" name="email"><br>
-                Password:<input type="text" name="passw"><br>
-                <input type="submit">
+                Email:<input class="tbox" type="text" name="email"><br>
+                Password:<input class="tbox" type="text" name="passw"><br>
+                <input class="btn" type="submit">
             </form>
             No account ? <a href="register">Sign Up</a> Now
+        </div>
     </body>
 </html>
