@@ -3,21 +3,59 @@
 <html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            background-color: #03A9F4;
+            color: white;
+            padding-top: 20px;
+        }
+        .form_cont {
+            text-align: center;
+            font-size: 45px;
+            padding: 15px;
+            margin: 100px 400px;
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+        }
+        .btn{
+        background-color: inherit;
+        font-size: 30px;
+        padding:10px;
+        margin-top: 30px;
+        border:none;
+        color: white;
+        box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+        }
+        .tbox {
+            font-size: 25px;
+        }
+        .r_btn {
+            border:0px;
+            width: 100%;
+            height: 2em;
+        }
+        .header {
+            text-align: center;
+            font-size: 50px;
+        }
+        </style>
         <title>Register</title>
     </head>
     <body>
+        <div class="header">Registration</div>
+        <div class="form_cont" >
         <form method="Post" action="/register">
-            First name:<input type="text" name="fname"><br>
-            Last Name:<input type="text" name="lname"><br>
-            Email:<input type="text" name="email"><br>
-            Mobile:<input type="text" name="mob"><br>
-            Hobby:<input type="password" name="hobby"><br>
+            First name:<input class="tbox" type="text" name="fname"><br>
+            Last Name:<input class="tbox" type="text" name="lname"><br>
+            Email:<input class="tbox" type="text" name="email"><br>
+            Mobile:<input class="tbox" type="text" name="mob"><br>
+            Hobby:<input class="tbox" type="password" name="hobby"><br>
             Gender:<br>
-            Male<input type="radio" name="gen" value="m">
-            Female<input type="radio" name="gen" value="m"><br>
-            Password:<input type="password" name="passw"><br>
-            Re-type Password:<input type="password" name="passw_c"><br>
+            Male<input class="r_btn" type="radio" name="gen" value="m">
+            Female<input class="r_btn" type="radio" name="gen" value="m"><br>
+            Password:<input class="tbox" type="password" name="passw"><br>
+            Re-type Password:<input class="tbox" type="password" name="passw_c"><br>
             <input class="btn" type="submit" >
         </form>
+        </div>
     </body>
 </html>
