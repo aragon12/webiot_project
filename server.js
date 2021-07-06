@@ -21,12 +21,6 @@ app.get("/", (req, res) => {
     }
 });
 
-//redirect to home
-//if anyone come directly 
-app.get("/quiz", (req, res) => {
- res.redirect('/');
-});
-
 function lg(req, res) {
     var email = req.body.email
     var passw = req.body.passw
@@ -46,18 +40,21 @@ function lg(req, res) {
               console.log(result);
               result.forEach( (data) => {
                   if (data.pass == passw) {
-                      res.write("Autheticated")
+                      res.setHeader('Content-type', 'text/html');
+                      res.write("Sucessfully Authenticated<br><a href=/>click here</a> to go back")
                       req.session.auth = true
                       req.session.fname = data.fname
                       req.session.lname = data.lname
                       res.end()
                   } else {
-                    res.write("Password wrong")
+                    res.setHeader('Content-type', 'text/html');
+                    res.write("ERROR: Wrong Password<br><a href=/>click here</a> to go back")
                     res.end()
                   }
               })
         } else {
-            res.write("Email does not exist")
+          res.setHeader('Content-type', 'text/html');
+          res.write("Error: No Account Exists with this Email.<br><a href=/register>click here</a> to register")
             res.end()
         }
         });
