@@ -8,8 +8,7 @@
                 padding-top: 20px;
             }
             .form_cont {
-                text-align: center;
-                font-size: 45px;
+                font-size: 30px;
                 padding: 15px;
                 margin: 100px 400px;
             box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
@@ -33,6 +32,12 @@
     <body>
         <div class="header"> Welcome back <%=fname%>  <%=lname%> </div>
         <div class="form_cont">
+            <b>First Name: </b><%=fname%><br>
+            <b>Last Name: </b><%=lname%><br>
+            <b>Gender: </b><%=gen%><br>
+            <b>Email: </b><%=email%><br>
+            <b>Mobile No: </b><%=mob%><br>
+            <b>Hobby: </b><%=hobby%><br>
             <form method="Post" action="/logout">
                 <button class="btn" >Logout</button>
             </form>

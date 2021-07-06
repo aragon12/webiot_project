@@ -15,7 +15,15 @@ app.use(session({secret:"our secret", resave:true, saveUninitialized:true}))
 //render homepage
 app.get("/", (req, res) => {
     if(req.session.auth == true) {
-        res.render('logged', {fname:req.session.fname, lname:req.session.lname})
+      var data = {
+        fname:req.session.fname,
+        lname:req.session.lname,
+        email:req.session.email,
+        mob:req.session.mob,
+        hobby:req.session.hobby,
+        gen:req.session.gen
+      }
+        res.render('logged', data)
     } else {
         res.render('home');
     }
@@ -43,6 +51,10 @@ function lg(req, res) {
                       req.session.auth = true
                       req.session.fname = data.fname
                       req.session.lname = data.lname
+                      req.session.email = data.email
+                      req.session.mob = data.mobile
+                      req.session.hobby = data.hobby
+                      req.session.gen = data.gender
                       res.redirect("/")
                   } else {
                     res.setHeader('Content-type', 'text/html');
