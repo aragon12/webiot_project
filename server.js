@@ -98,7 +98,7 @@ app.post('/register', (req, res)=> {
         database: "mydb"
       });
 
-      var qry = "insert into auth_table (fname, lname, email, mobile, hobby, gender, pass) values('"+req.body.fname+"','"+req.body.lname+"','"+req.body.email+"','"+req.body.mobile+"','"+req.body.hobby+"','"+req.body.gender+"','"+req.body.pass+"')"
+      var qry = "insert into auth_table (fname, lname, email, mobile, hobby, gender, pass) values('"+req.body.fname+"','"+req.body.lname+"','"+req.body.email+"','"+req.body.mob+"','"+req.body.hobby+"','"+req.body.gen+"','"+req.body.passw+"')"
 
     con.connect(function(err) {
         if (err) throw err;
@@ -108,7 +108,8 @@ app.post('/register', (req, res)=> {
           console.log("1 record inserted");
         });
       });
-      res.write("Registered Successfully")
+      res.setHeader('Content-type', 'text/html');
+      res.write("Sucessfully Registered<br><a href=/>click here</a> to login")
       res.end()
 });
 
