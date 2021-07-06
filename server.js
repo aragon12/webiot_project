@@ -40,12 +40,10 @@ function lg(req, res) {
               console.log(result);
               result.forEach( (data) => {
                   if (data.pass == passw) {
-                      res.setHeader('Content-type', 'text/html');
-                      res.write("Sucessfully Authenticated<br><a href=/>click here</a> to go back")
                       req.session.auth = true
                       req.session.fname = data.fname
                       req.session.lname = data.lname
-                      res.end()
+                      res.redirect("/")
                   } else {
                     res.setHeader('Content-type', 'text/html');
                     res.write("ERROR: Wrong Password<br><a href=/>click here</a> to go back")
@@ -71,6 +69,9 @@ app.get("/login", (req, res) => {
 
 
 function reg(req, res) {
+    if(req.session.auth == true) {
+      res.redirect("/")
+    }
     res.render("register")
 }
 //handle register 
